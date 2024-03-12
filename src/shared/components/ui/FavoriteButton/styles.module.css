@@ -1,0 +1,16 @@
+.favoriteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favoriteButton:hover {
+  cursor: pointer;
+}
+
+.favoriteButton__number {
+  margin-left: var(--size-3);
+  font-size: var(--size-5);
+  color: var(--white);
+  font-weight: 400;
+}

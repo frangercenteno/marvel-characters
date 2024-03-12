@@ -1,0 +1,25 @@
+.carouselContainer {
+  overflow-x: scroll;
+  scrollbar-width: 4px;
+  -ms-overflow-style: 4px;
+  padding: var(--size-5) 0;
+}
+
+.carouselContainer:hover {
+  cursor: grab;
+}
+
+.carouselContainer::-webkit-scrollbar {
+  height: 4px;
+}
+
+.carouselContainer::-webkit-scrollbar-thumb {
+  background-color: var(--red);
+  border-radius: 4px;
+}
+
+.carouselContainer__list {
+  display: flex;
+  gap: var(--size-4);
+  min-width: max-content;
+}

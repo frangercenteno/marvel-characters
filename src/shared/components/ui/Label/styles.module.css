@@ -1,0 +1,5 @@
+.label {
+  font-size: var(--size-4);
+  color: var(--black);
+  text-transform: uppercase;
+}

@@ -1,0 +1,17 @@
+.navbar {
+  padding: var(--size-5) 0;
+  background-color: var(--black);
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar__items {
+  display: flex;
+  align-items: center;
+  gap: var(--size-5);
+}

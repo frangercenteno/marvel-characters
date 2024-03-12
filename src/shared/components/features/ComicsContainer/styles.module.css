@@ -1,0 +1,28 @@
+.comicsContainer {
+  margin-top: var(--size-14);
+  padding-left: var(--size-5);
+  padding-bottom: var(--size-14);
+}
+
+.comicsContainer__title {
+  margin-bottom: var(--size-8);
+}
+
+.comicsContainer__slider {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .comicsContainer {
+    padding-left: var(--size-14);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .comicsContainer {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+}

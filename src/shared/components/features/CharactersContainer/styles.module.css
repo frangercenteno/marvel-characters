@@ -1,0 +1,18 @@
+.charactersContainer {
+  margin-top: var(--size-11);
+}
+
+.charactersContainer__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  gap: var(--size-5);
+  @media (min-width: 768px) {
+    /* 4 columns on tablet */
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    /* 6 columns on desktop */
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
