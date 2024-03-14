@@ -12,6 +12,7 @@ const FavoriteIconActive = ({ size = 24, classNameIcon, ...rest }: Props) => (
     viewBox="0 0 26 26"
     className={classNameIcon}
     {...rest}
+    data-testid="favorite-icon-active"
   >
     <path
       fill="#EC1D24"

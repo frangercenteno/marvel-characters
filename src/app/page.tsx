@@ -1,22 +1,33 @@
 import CharactersContainer from "@/shared/components/features/CharactersContainer";
-import SearchIcon from "@/shared/components/ui/Icons/SearchIcon";
-import Label from "@/shared/components/ui/Label";
-import TextField from "@/shared/components/ui/TextField";
-import MainLayout from "@/shared/layouts/MainLayout";
+import ErrorMessage from "@/shared/components/ui/ErrorMessage";
 
-export default function Home() {
+import { CharacterProvider } from "@/shared/contexts/CharactersContext";
+import MainLayout from "@/shared/layouts/MainLayout";
+import { fetchData } from "@/shared/lib/fetch";
+import { GET_ALL_CHARACTERS } from "@/shared/services/getAllCharacters";
+import { type Character } from "@/shared/types";
+
+async function getData(): Promise<Character[] | Error> {
+  try {
+    const res = await fetchData(GET_ALL_CHARACTERS);
+    return res.data.results;
+  } catch (error) {
+    throw new Error(error as string);
+  }
+}
+
+export default async function Home() {
+  const response = await getData();
+
+  if (response instanceof Error) {
+    return <ErrorMessage message={response.message} />;
+  }
+
   return (
     <MainLayout>
-      <main className="container">
-        <TextField
-          placeholder="Search a character..."
-          id="search"
-          role="search"
-          Icon={<SearchIcon />}
-        />
-        <Label text="50 Results" />
-        <CharactersContainer characters={[1, 2, 3, 4, 5, 6]} />
-      </main>
+      <CharacterProvider charactersProps={response}>
+        <CharactersContainer />
+      </CharacterProvider>
     </MainLayout>
   );
 }

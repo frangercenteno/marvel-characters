@@ -13,7 +13,7 @@ const TextField = ({ Icon, error, className, id, ...rest }: Props) => {
     ? `${styles.textField__container} error`
     : styles.textField__container;
   return (
-    <div className={`${inputClassName} ${className}`}>
+    <div className={`${inputClassName} ${className}`} data-testid={id}>
       {Icon && (
         <label className={styles.textField__icon} htmlFor={id}>
           {Icon}

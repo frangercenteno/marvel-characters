@@ -12,6 +12,7 @@ const FavoriteIconDisabled = ({ size = 26, classNameIcon, ...rest }: Props) => (
     viewBox="0 0 26 26"
     className={classNameIcon}
     {...rest}
+    data-testid="favorite-icon-disabled"
   >
     <path
       fill="#fff"

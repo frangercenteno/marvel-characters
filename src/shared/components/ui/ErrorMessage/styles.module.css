@@ -1,0 +1,17 @@
+.errorContainer {
+  min-height: 400px;
+  padding: var(--size-14) var(--size-8);
+  text-align: center;
+}
+
+.errorContainer__title {
+  margin-bottom: var(--size-4);
+  font-size: var(--size-14);
+  font-weight: 700;
+}
+
+.errorContainer__message {
+  font-size: var(--size-6);
+  margin-top: var(--size-4);
+  color: var(--gray);
+}

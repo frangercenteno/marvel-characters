@@ -1,7 +1,7 @@
 "use client";
+import styles from "./styles.module.css";
 import FavoriteIconActive from "../Icons/FavoriteIconActive";
 import FavoriteIconDisabled from "../Icons/FavoriteIconDisabled";
-import styles from "./styles.module.css";
 
 type Props = {
   isFavorite: boolean;

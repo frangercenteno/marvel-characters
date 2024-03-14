@@ -1,9 +1,10 @@
+import type { Comic } from "@/shared/types";
+import styles from "./styles.module.css";
 import Carousel from "../../ui/Carousel";
 import ComicCard from "../../ui/ComicCard";
-import styles from "./styles.module.css";
 
 type Props = {
-  comics: any[];
+  comics: Comic[];
 };
 
 const ComicsContainer = ({ comics }: Props) => {
@@ -13,7 +14,7 @@ const ComicsContainer = ({ comics }: Props) => {
       <div className={styles.comicsContainer__slider}>
         <Carousel>
           {comics.map((comic) => (
-            <Carousel.Item key={comic}>
+            <Carousel.Item key={comic.id}>
               <ComicCard {...comic} />
             </Carousel.Item>
           ))}

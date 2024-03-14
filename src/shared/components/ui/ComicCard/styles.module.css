@@ -1,5 +1,5 @@
 .comicCardContainer {
-  min-width: 192.2px;
+  max-width: 192.2px;
 }
 
 .comicCardContainer__image {

@@ -1,30 +1,37 @@
 "use client";
 import Image from "next/image";
+import useFavorites from "@/shared/hooks/useFavorites";
+import type { Character } from "@/shared/types";
 import FavoriteButton from "../../ui/FavoriteButton";
 import styles from "./styles.module.css";
 
 type Props = {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-  isFavorite: boolean;
+  character: Character;
 };
 
-const CharacterHero = ({ name, image, description, isFavorite }: Props) => {
+const CharacterHero = ({ character }: Props) => {
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const { id, name, description, thumbnail } = character;
   return (
     <header className={`${styles.characterHeroContainer} border_decoration`}>
       <div className={styles.characterHeroContainer__content}>
         <figure className={styles.characterHeroContainer__image}>
-          <Image src={image} alt={name} width={393} height={397} />
+          <Image
+            src={`${thumbnail.path}.${thumbnail.extension}`}
+            alt={name}
+            width={393}
+            height={397}
+          />
         </figure>
         <div className={styles.characterHeroContainer__info}>
           <article>
             <h1 className={`${styles.characterHeroContainer__info__h1} h1`}>
-              <span>{name}</span>
+              <span className={styles.characterHeroContainer__info__text}>
+                {name}
+              </span>
               <FavoriteButton
-                isFavorite={isFavorite}
-                onClick={() => console.log("clicked")}
+                isFavorite={isFavorite(id)}
+                onClick={() => toggleFavorite(character)}
                 sizeIcon={24}
               />
             </h1>

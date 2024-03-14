@@ -2,6 +2,10 @@
   margin-top: var(--size-11);
 }
 
+.charactersContainer__title {
+  margin-top: var(--size-14);
+}
+
 .charactersContainer__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
