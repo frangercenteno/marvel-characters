@@ -19,12 +19,19 @@ const CharacterCard = ({ character, isFavorite, onFavorite }: Props) => {
       <Link href={`${ROUTES.CHARACTER_DETAILS}/${character.id}`}>
         <figure className={styles.characterCard__image}>
           <Image
-            width={189}
-            height={190}
             src={image}
+            width="0"
+            height="0"
+            sizes="100vw"
             alt={character.name}
-            style={{ opacity: "0", transition: "opacity 0.3s ease" }}
+            style={{
+              opacity: "0",
+              transition: "opacity 0.3s ease",
+              width: "100%",
+              height: "auto",
+            }}
             onLoad={(image) => (image.currentTarget.style.opacity = "1")}
+            priority={false}
           />
         </figure>
       </Link>

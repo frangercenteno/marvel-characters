@@ -1,18 +1,11 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import CharacterHero from "@/shared/components/features/CharacterHero";
 import useFavorites from "@/shared/hooks/useFavorites";
+import { mockCharacters } from "../../../../../mocks/characters.mock";
 
 jest.mock("@/shared/hooks/useFavorites");
 
-const character = {
-  id: 1,
-  name: "Iron Man",
-  description: "Genius, billionaire, playboy, philanthropist",
-  thumbnail: {
-    path: "path/to/image",
-    extension: "jpg",
-  },
-};
+const character = mockCharacters[0];
 
 describe("CharacterHero", () => {
   beforeEach(() => {

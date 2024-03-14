@@ -12,34 +12,35 @@ const useSearch = (
   const [loading, setLoading] = useState(false);
   const [searchCalled, setSearchCalled] = useState(false);
   const [data, setData] = useState<Character[]>([]);
-  const loadData = async () => {
-    try {
-      setLoading(true);
-
-      const result = await fetchData({
-        url: urlApi,
-        queryParams: {
-          ...params,
-          nameStartsWith: debouncedSearch,
-        },
-      });
-      setData(result.data.results);
-    } catch (error) {
-      throw new Error(error as string);
-    } finally {
-      setSearchCalled(true);
-      setLoading(false);
-    }
-  };
 
   useEffect(() => {
+    const loadData = async () => {
+      try {
+        setLoading(true);
+
+        const result = await fetchData({
+          url: urlApi,
+          queryParams: {
+            ...params,
+            nameStartsWith: debouncedSearch,
+          },
+        });
+        setData(result.data.results);
+      } catch (error) {
+        throw new Error(error as string);
+      } finally {
+        setSearchCalled(true);
+        setLoading(false);
+      }
+    };
+
     if (!debouncedSearch) {
       setSearchCalled(false);
       setData([]);
       return;
     }
     loadData();
-  }, [debouncedSearch]);
+  }, [debouncedSearch, urlApi, params]);
 
   return { search, setSearch, loading, data, searchCalled };
 };
