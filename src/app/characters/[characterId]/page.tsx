@@ -44,7 +44,6 @@ export default async function Character({
   }
 
   const { character, comics } = result;
-
   return (
     <MainLayout>
       <main>

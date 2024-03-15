@@ -4,7 +4,8 @@ import style from "./styles.module.css";
 
 type Props = Comic;
 
-const ComicCard = ({ thumbnail, title, issn }: Props) => {
+const ComicCard = ({ thumbnail, title, dates }: Props) => {
+  const releaseDate = new Date(dates[0].date).getFullYear();
   return (
     <div className={style.comicCardContainer}>
       <figure className={style.comicCardContainer__image}>
@@ -17,7 +18,7 @@ const ComicCard = ({ thumbnail, title, issn }: Props) => {
       </figure>
       <h3 className={`${style.comicCardContainer__info} paragraph`}>{title}</h3>
       <small className={`${style.comicCardContainer__info__small} small`}>
-        {issn}
+        {releaseDate}
       </small>
     </div>
   );
