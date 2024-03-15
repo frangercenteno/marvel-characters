@@ -24,6 +24,7 @@ const FavoriteButton = ({
     className={`${styles.favoriteButton} ${className}`}
     type="button"
     role="button"
+    aria-label="Favorite"
     onClick={onClick}
   >
     {isFavorite ? (

@@ -1,11 +1,16 @@
 import { fetchData } from "@/shared/lib/fetch";
 import CharacterHero from "@/shared/components/features/CharacterHero";
-import ComicsContainer from "@/shared/components/features/ComicsContainer";
 import ErrorMessage from "@/shared/components/ui/ErrorMessage";
 import MainLayout from "@/shared/layouts/MainLayout";
 import type { Character, Comic } from "@/shared/types";
 import { GET_CHARACTER_BY_ID } from "@/shared/services/getCharacterById";
 import { GET_ALL_COMICS_BY_CHARACTER } from "@/shared/services/getAllComicsByCharacter";
+import dynamic from "next/dynamic";
+
+const ComicsContainer = dynamic(
+  () => import("@/shared/components/features/ComicsContainer"),
+  { ssr: false }
+);
 
 async function getData(characterId: string): Promise<
   | {

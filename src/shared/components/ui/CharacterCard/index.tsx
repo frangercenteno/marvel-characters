@@ -26,8 +26,8 @@ const CharacterCard = ({
         <figure className={styles.characterCard__image}>
           <Image
             src={image}
-            width="0"
-            height="0"
+            width={200}
+            height={190}
             sizes="100vw"
             alt={character.name}
             style={{
