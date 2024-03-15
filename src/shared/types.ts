@@ -3,6 +3,11 @@ export type Thumbnail = {
   extension: string;
 };
 
+export type ComicDate = {
+  type: string;
+  date: Date;
+};
+
 export type Comic = {
   id: number;
   resourceURI: string;
@@ -10,6 +15,7 @@ export type Comic = {
   title: string;
   issn: string;
   thumbnail: Thumbnail;
+  dates: ComicDate[];
 };
 
 export type Comics = {

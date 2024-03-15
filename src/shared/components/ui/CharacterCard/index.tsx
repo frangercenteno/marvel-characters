@@ -10,9 +10,15 @@ type Props = {
   character: Character;
   isFavorite: boolean;
   onFavorite: (character: Character) => void;
+  isPriority?: boolean;
 };
 
-const CharacterCard = ({ character, isFavorite, onFavorite }: Props) => {
+const CharacterCard = ({
+  character,
+  isFavorite,
+  onFavorite,
+  isPriority,
+}: Props) => {
   const image = `${character.thumbnail.path}.${character.thumbnail.extension}`;
   return (
     <div className={`${styles.characterCard} border_decoration`}>
@@ -28,10 +34,10 @@ const CharacterCard = ({ character, isFavorite, onFavorite }: Props) => {
               opacity: "0",
               transition: "opacity 0.3s ease",
               width: "100%",
-              height: "auto",
+              height: "100%",
             }}
             onLoad={(image) => (image.currentTarget.style.opacity = "1")}
-            priority={false}
+            priority={isPriority}
           />
         </figure>
       </Link>

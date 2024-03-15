@@ -25,6 +25,12 @@ export const mockCharacters: Character[] = [
             path: "https://example.com/comics/ironman/1",
             extension: "jpg",
           },
+          dates: [
+            {
+              type: "onsaleDate",
+              date: new Date("2021-10-10"),
+            },
+          ],
         },
         // Add more comics here
       ],
@@ -102,6 +108,12 @@ export const mockCharacters: Character[] = [
             path: "https://example.com/comics/captainamerica/1",
             extension: "jpg",
           },
+          dates: [
+            {
+              type: "onsaleDate",
+              date: new Date("2021-10-10"),
+            },
+          ],
         },
         // Add more comics here
       ],
@@ -179,6 +191,12 @@ export const mockCharacters: Character[] = [
             path: "https://example.com/comics/thor/1",
             extension: "jpg",
           },
+          dates: [
+            {
+              type: "onsaleDate",
+              date: new Date("2021-10-10"),
+            },
+          ],
         },
         // Add more comics here
       ],

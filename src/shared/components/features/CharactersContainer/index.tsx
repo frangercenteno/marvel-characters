@@ -33,12 +33,13 @@ const CharactersContainer = () => {
 
       <section className={styles.charactersContainer}>
         <ul className={styles.charactersContainer__list}>
-          {(visible ? favorites : characters)?.map((character) => (
+          {(visible ? favorites : characters)?.map((character, index) => (
             <li key={character.id}>
               <CharacterCard
                 character={character}
                 isFavorite={isFavorite(character.id)}
                 onFavorite={toggleFavorite}
+                isPriority={index < 20}
               />
             </li>
           ))}
