@@ -3,7 +3,7 @@ import { mockComics } from "../../../mocks/comics.mock";
 import { sortByDate } from "../../../src/shared/lib/sortByDate";
 
 describe("sortByDate", () => {
-  it.only("should sort comics by onsaleDate in ascending order", () => {
+  it("should sort comics by onsaleDate in ascending order", () => {
     const sortedComics = sortByDate(mockComics);
 
     expect(sortedComics).toEqual([
